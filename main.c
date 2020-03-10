@@ -14,7 +14,7 @@ int main()
         printf(".----.   .--.  .---.  .--.  .-..-.   .-.   .----.   .-. .-.  .--.  .-. .-.  .--.  .-.   .----.\n"
            "| {}  } / {} \\{_   _}/ {} \\ | || |   | |   | {_     |  `| | / {} \\ | | | | / {} \\ | |   | {_  \n"
            "| {}  }/  /\\  \\ | | /  /\\  \\| || `--.| `--.| {__    | |\\  |/  /\\  \\\\ \\_/ //  /\\  \\| `--.| {__ \n"
-           "`----' `-'  `-' `-' `-'  `-'`-'`----'`----'`----'   `-' `-'`-'  `-' `---' `-'  `-'`----'`----'\n\n");
+           "`----' `-'  `-' `-' `-'  `-'`-'`----'`----'`----'   `-' `-'`-'  `-' `---' `-'  `-'`----'`----");
         printf("\t\n"
            "                  __--___\n"
            "                 >_'--'__'\n"
@@ -29,9 +29,9 @@ int main()
            "        |   \\             |                |  |\\|\n"
            "        \\    \\____________!________________/  /\n"
            "         \\ _______OOOOOOOOOOOOOOOOOOO________/\n"
-           "          \\________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_______/\n"
-           "%%%^^^^^%%%%%^^^^!!^%%^^^^%%%%%!!!!^^^^^^!%^^^%%%%!!^^\n"
-           "^^!!!!%%%%^^^^!!^^%%%%%^^!!!^^%%%%%!!!%%%%^^^!!^^%%%!!\n\n");
+           "          \\________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_______/\n\n"
+          /* "%%%^^^^^%%%%%^^^^!!^%%^^^^%%%%%!!!!^^^^^^!%^^^%%%%!!^^\n"
+           "^^!!!!%%%%^^^^!!^^%%%%%^^!!!^^%%%%%!!!%%%%^^^!!^^%%%!!\n\n"*/);
     //affichage du mini menu principal
 
 
@@ -39,22 +39,22 @@ int main()
     int options;
     //variables
 
+    //code(s) pour des fonctionalitées spéciales
+    SetConsoleOutputCP(65001);  //pour les accents, etc...
+    //code(s) pour des fonctionalitées spéciales
+
     //options du menu
-    printf("Apuyez sur le numero désiré :");
-    printf("\n1}\n +-+-+-+-+-+\n"
-           " |J|O|U|E|R|\n"
-           " +-+-+-+-+-+\n");
-    printf("\n2}\n +-+-+-+-+\n"
-           " |a|i|d|e|\n"
-           " +-+-+-+-+\n\n");
-    SetConsoleOutputCP(65001);
+    printf("Apuyez sur le numero désiré :\n");
+    printf("1} +-+-+-+-+-+        2} +-+-+-+-+\n"
+           "   |J|O|U|E|R|           |a|i|d|e|\n"
+           "   +-+-+-+-+-+           +-+-+-+-+\n\n");
     printf("►");
     scanf("%d",&options);
     //options du menu
 
     //options de base
     if (options==1)
-        printf("Aloonz-y:")
+        printf("Aloonz-y:");
     else if (options==2)
         printf("\n\nVous êtes sur un jeu de bataille navale.\n"
                "Voici les règles du jeu :\n"
