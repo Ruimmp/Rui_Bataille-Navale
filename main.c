@@ -7,14 +7,87 @@
 
 #include <stdio.h>
 #include <windows.h>
+#include <string.h>
+#include <time.h>
+#include <stdlib.h>
+
 
 int main() {
     //variables
     int options;
-    int continuer=0;
+    int continuer = 0;
     //variables
 
-    do{
+    //cartes
+    int carte1[10][10]
+            = {
+                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 }
+                    { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+                    { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+                    { 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 }
+                    { 0, 1, 0, 0, 0, 0, 0, 1, 0, 0 }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+            };
+    int carte2[10][10]
+            = {
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+            };
+    int carte3[10][10]
+            = {
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+            };
+    int carte4[10][10]
+            = {
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+            };
+    int carte5[10][10]
+            = {
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+            };
+    //cartes
+
+    do {
+
         //affichage du mini menu principal
         printf("\n"
                ".----.   .--.  .---.  .--.  .-..-.   .-.   .----.   .-. .-.  .--.  .-. .-.  .--.  .-.   .----.\n"
@@ -75,21 +148,23 @@ int main() {
                    "\n"
                    "Une fois que vous avez touché les 3 bateaux, la partie s'arrête et un message s’affiche vous annonçant que vous avez gagné.\n\n");
         else if (options == 1)
-            printf("aaaaa");
-        //options de base
 
-        printf("Voulez-vous continuer à jouer?\n");
-        printf("\n►\n\n");
+
+            //options de base
+
+            printf("Voulez-vous continuer à jouer?\n");
+        printf("\n►");
         scanf("%d", &continuer);
 
         // si la perssonne ne veut plus continuer elle peut appuyer sur 2 et quitter le programme
-        if (continuer==2)
-        {
+        if (continuer == 2) {
             exit(0); //fontion pour sortir du programme
+        } else if (continuer == 1) {
+            system("cls"); //fontion pour nttoyer l'interface
         }
         // si la perssonne ne veut plus continuer elle peut appuyer sur 2 et quitter le programme
 
-    }while (continuer = 1);
+    } while (continuer = 1);
 
     system("pause");
     return 0;
