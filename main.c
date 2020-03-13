@@ -3,6 +3,7 @@
  * Auteur: Rui Monteiro
  * Date début du code: 05.03.2020
  * Date fin du code:
+ * Version du 13.03.20
  */
 
 #include <stdio.h>
