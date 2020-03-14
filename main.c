@@ -12,15 +12,13 @@
 #include <windows.h>
 #include <stdlib.h>
 
-void Title();
-
 int main() {
     //variables
     int options;
     int continuer = 0;
     //variables
 
-    char valide = "x";
+
     //cartes
     int carte1[10][10]= {
             {1,1,0,1,0,0,1,1,1,1},
@@ -148,21 +146,21 @@ int main() {
             //printf(carte1);
 
             for (int i = 0; i < 41; ++i) {
-                printf("-");
+                printf("═");
             }
         printf("\n");
         for (int ligne = 0; ligne < 10; ++ligne) {
             for (int colonne = 0; colonne < 10; ++colonne) {
                 if (carte1[ligne][colonne] == 1) {
-                    printf("| %c ", valide);
+                    printf("║ %c ", options);
                 } else {
-                    printf("|   ");
+                    printf("║   ");
                 }
 
             }
-            printf("|\n");
+            printf("║\n");
             for (int i = 0; i < 41; ++i) {
-                printf("-");
+                printf("═");
             }
             printf("\n");
             //options de base
@@ -180,11 +178,8 @@ int main() {
             // si la perssonne ne veut plus continuer elle peut appuyer sur 2 et quitter le programme
 
         }
-    while (continuer = 1);
+
 
         system("pause");
         return 0;
-    }
-    while void Title(){
-        printf("Bataille Navale\n");
-    }}
+    }while (continuer = 1);}
