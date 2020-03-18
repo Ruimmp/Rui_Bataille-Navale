@@ -19,6 +19,8 @@ int main() {
   // variables
   int options;
   int continuer;
+  int line;
+  int colonne;
   // variables
 
   // variables à 0
@@ -28,11 +30,16 @@ int main() {
 
   // cartes
   int carte1[10][10] = {
-      {1, 1, 0, 1, 0, 0, 1, 1, 1, 1}, {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-      {1, 0, 0, 1, 0, 1, 1, 1, 0, 1}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
-      {0, 0, 0, 0, 0, 1, 0, 0, 0, 1}, {1, 1, 0, 0, 0, 0, 0, 0, 0, 1},
-      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
+      {0,0,0,1,0,0,0,1,1,1},
+      {0,0,0,1,0,0,0,0,0,0},
+      {1,0,0,1,0,0,0,0,0,0},
+      {1,0,0,0,0,0,0,0,0,0},
+      {1,0,0,0,0,0,0,0,0,0},
+      {1,0,0,0,0,1,0,0,0,0},
+      {0,0,0,0,0,1,0,0,0,0},
+      {0,0,0,0,0,0,0,0,0,0},
+      {0,0,0,0,0,0,0,0,0,0},
+      {0,0,0,0,0,1,1,1,1,1},
   };
   // cartes
   do {
@@ -83,16 +90,20 @@ int main() {
     if (options > 3) {
       printf("Entrez de bonnes valeures\n");
     }
+    else if (options == 3)
+    {
+      printf("\n\n\nPAS ENCORE AU POINT!!!\n\n\n");
+    }
 
     else if (options == 2) {
       printf("Vous êtes sur un jeu de bataille navale.\n"
              "Voici les règles du jeu :\n"
              "Le but : Couler tous les bateaux adverses placés quelque part en "
              "mer (sur le plateau de jeu de 100 cases), avec des explosifs.\n"
-             "Il y a dix bateaux. Les bateaux ne touchent pas.\n"
+             "Il y a cinc bateaux. Les bateaux ne touchent pas.\n"
              "Pour essayer de toucher les bateaux, vous devez entrez la "
              "coordonnée de la case où vous voulez lancer un explosif "
-             "(exemple: A5), puis tapez enter. Attention à bien rentrer la "
+             "(exemple: ligne:1 colone:6), puis tapez enter. Attention à bien rentrer la "
              "lettre en premier !\n"
              "\n"
              /*"Si le programme affiche « A l’eau », vous n’avez pas touché de "
@@ -118,25 +129,29 @@ int main() {
 
     else if (options == 1) {
 
+      while (1)
+      {
+      system("cls");
+
       printf("\nVoici votre carte Chef.\n");
       printf("Essayez de couler tous les bateaux.\n");
-      printf("Bonne chance. \n\n");
+      printf("Bonne chance. \n\n\n");
       // affichage de la carte
-      printf("  A   B   C   D   E   F   G   H   I   J   \n");
+      printf("  1   2   3   4   5   6   7   8   9   10   \n");
       for (int i = 0; i < 41; ++i)
       {
         printf("═");
       }
-
       printf("\n");
       for (int line = 0; line < 10; ++line)
       {
         for (int colonne = 0; colonne < 10; ++colonne)
         {
-          if (carte1[line][colonne] == 1)
+          if (carte1[line][colonne] == 9)
           {
-            printf("║ %c ", val);
-          } else {
+            printf("║ %d ", val);
+          } else
+            {
             printf("║   ");
           }
         }
@@ -147,12 +162,27 @@ int main() {
         }
         printf("\n");
       }
+      do
+        {
+        printf("\nEntrez une ligne : ");
+        scanf("%d", &line);
+      }while (line < 1 || line > 10);  //si la valeur est plus petite que 1 ou "||" plus grande que 10 le programme redemendera la ligne
+      do
+        {
+        printf("\nEntrez une colonne : ");
+        scanf("%d", &colonne);
+       }while (colonne < 1 || colonne > 10);
 
-      for (int questions; questions = 0; questions)
-      {
-        printf("");
-      }
-    }
+        if (carte1[line - 1][colonne - 1] == 1) {
+          carte1[line - 1][colonne - 1] = 2;
+          printf ("\n\nBien joué, touché!\n");
+          //avant de redemander à l'utilisateur de nouvelles valeures, le programme attends 2s
+          Sleep(2000);
+        } else{
+          printf("\n\nBonne tentative!\n");
+          Sleep(2000);
+        }
+    }}
     // affichage de la carte
     // options de base
 
