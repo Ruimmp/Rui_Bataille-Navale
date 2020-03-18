@@ -10,9 +10,7 @@ Génération
 
 Vous aurez besoin de :
 ● Clion
-
 ● un compilateur C (C est le language de programation)
-
 ● Un ordinateur Windows
 
 Pour générer l'exécutable, vous devez:
