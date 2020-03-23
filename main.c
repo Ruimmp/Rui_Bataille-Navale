@@ -2,8 +2,8 @@
  * Projet: Bataille Navale
  * Auteur: Rui Monteiro
  * Date début du code: 05.03.2020
+ * Version : 0.2
  * Date fin du code (version 1.0):
- * Version du 18.03.2020
  */
 
 #include <stdio.h>
@@ -162,17 +162,26 @@ int main() {
         }
         printf("\n");
       }
+      //partie qui demande la ligne et la colonne à l'utilisateur
       do
         {
         printf("\nEntrez une ligne : ");
         scanf("%d", &line);
+          if (line > 10){
+            printf("\nEntrez une valeure valable. (1 - 10)\n");
+          }
       }while (line < 1 || line > 10);  //si la valeur est plus petite que 1 ou "||" plus grande que 10 le programme redemendera la ligne
       do
         {
         printf("\nEntrez une colonne : ");
         scanf("%d", &colonne);
+          if (colonne > 10){
+            printf("\nEntrez une valeure valable. (1 - 10)\n");
+          }
        }while (colonne < 1 || colonne > 10);
+        //partie qui demande la ligne et la colonne à l'utilisateur
 
+        //partie qui vérifie si un bateau a ete touché ou pas
         if (carte1[line - 1][colonne - 1] == 1) {
           carte1[line - 1][colonne - 1] = 2;
           printf ("\n\nBien joué, touché!\n");
@@ -182,6 +191,7 @@ int main() {
           printf("\n\nBonne tentative!\n");
           Sleep(2000);
         }
+        //partie qui vérifie si un bateau a ete touché ou pas
     }}
     // affichage de la carte
     // options de base
