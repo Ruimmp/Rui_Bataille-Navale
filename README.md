@@ -16,4 +16,4 @@ Vous aurez besoin de :
 Pour générer l'exécutable, vous devez:
      1. Aller sur le Repository Bataille Navale 
      2. Dans le dossier "Rui_Bataille-Navale" du Repos: prenez le "CMakeLists.txt" et  le "main.c". Placez dans un dossier en local. Ouvrez le "CMakeLists.txt" avec Clion puis ouvrez le main.c avec Clion.
--
+
